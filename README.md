@@ -60,5 +60,13 @@ python -m recontee.cli run example.com --config config.yaml --resolvers resolver
   export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
   export POETRY_NO_INTERACTION=1
   export POETRY_VIRTUALENVS_IN_PROJECT=true
-  ```
+
+## Roadmap
+- Optional nuclei integration
+- Authenticated crawling options
+- Export results to SARIF/JSON for downstream pipelines
+
+## License
+MIT © 2025
+## Roadma  
 - **Go tools not found on PATH**: reload environment `source ~/.bashrc` or `exec $SHELL -l`.
