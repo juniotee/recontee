@@ -68,5 +68,3 @@ python -m recontee.cli run example.com --config config.yaml --resolvers resolver
 
 ## License
 MIT © 2025
-## Roadma  
-- **Go tools not found on PATH**: reload environment `source ~/.bashrc` or `exec $SHELL -l`.
