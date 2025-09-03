@@ -8,7 +8,6 @@ subfinder + amass  →  merge & dedupe  →  dnsx
 →  katana (crawl)  +  gau (archives)  →  ffuf (content discovery)
 ```
 
-- **Comments:** English across the source.
 - **OS:** Any modern Linux (Debian/Ubuntu/Fedora/Arch/openSUSE/Alpine).
 - **Package managers:** Poetry (preferred) *or* plain `pip` fallback.
 
