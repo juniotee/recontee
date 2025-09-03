@@ -1,0 +1,17 @@
+outputs: out
+threads: 80
+wordlist: /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt
+steps:
+  subfinder: true
+  amass: true
+  naabu: true
+  katana: true
+  gau: true
+  ffuf: true
+ffuf:
+  allowed_status: "200,204,301,302,307,308"
+  maxtime: 300
+  maxtime_job: 60
+  max_workers: 6
+  threads: 20
+  extensions: ""
