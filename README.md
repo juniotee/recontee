@@ -62,7 +62,8 @@ python -m recontee.cli run example.com --config config.yaml --resolvers resolver
   export POETRY_VIRTUALENVS_IN_PROJECT=true
 
 ## Roadmap
-- Optional nuclei integration
+- Nuclei integration
+- Censys, Shodan, FOFA search engine integration
 - Authenticated crawling options
 - Export results to SARIF/JSON for downstream pipelines
 
