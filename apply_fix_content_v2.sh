@@ -1,3 +1,13 @@
+cat > scripts/apply_fix_content_v2.sh <<'EOS'
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "[1/3] Backup do arquivo atual…"
+mkdir -p .backup_fix
+cp -a src/recontee/steps/content.py .backup_fix/content.py.$(date +%F-%H%M%S) 2>/dev/null || true
+
+echo "[2/3] Atualizando src/recontee/steps/content.py…"
+cat > src/recontee/steps/content.py <<'PY'
 from __future__ import annotations
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -109,7 +119,7 @@ def _gau_one(domain: str, providers: str) -> list[str]:
     gau = _bin("gau", "gau")
     if not gau:
         return []
-    cmd = [gau, "--subs", "--providers", providers]
+    cmd = [gau, "-subs", "--providers", providers]
     try:
         proc = subprocess.run(cmd, input=domain.encode(), capture_output=True, timeout=240)
         if proc.returncode != 0:
@@ -220,3 +230,11 @@ def merge_urls(outdir: Path) -> Path:
     n = _write_dedup(parts, all_out)
     console.log(f"   URLs pré-bruteforce (katana+gau): {n}")
     return all_out
+PY
+
+echo "[3/3] Feito. Agora rode novamente:"
+echo "   poetry run recontee run <alvo> --config config.yaml --resolvers resolvers.txt --force --rl-per-host 10"
+EOS
+
+chmod +x scripts/apply_fix_content_v2.sh
+./scripts/apply_fix_content_v2.sh

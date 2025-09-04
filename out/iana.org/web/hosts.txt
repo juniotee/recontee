@@ -1,0 +1,16 @@
+http://data.iana.org:80
+http://pen.iana.org:80
+http://recursive.iana.org:80
+http://res-dom.iana.org:80
+http://rs.iana.org:80
+http://whois.iana.org:80
+http://www.iana.org:80
+https://data.iana.org:443
+https://ftp.iana.org:443
+https://pen.iana.org:443
+https://recursive.iana.org:443
+https://res-dom.iana.org:443
+https://rs.iana.org:443
+https://rzm.iana.org:443
+https://whois.iana.org:443
+https://www.iana.org:443
