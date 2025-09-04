@@ -1,2 +1,0 @@
-recursive.iana.org
-res-dom.iana.org
